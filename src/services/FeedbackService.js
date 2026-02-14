@@ -1,11 +1,13 @@
 import axios from "axios";
+import API_BASE_URL from "../config";
 
-const URL_Base = "http://localhost:8080/api/feedbacks";
-const URL_Login = "http://localhost:8080/api/admins/login";
+const URL_Base = `${API_BASE_URL}/feedbacks`;
+const URL_Login = `${API_BASE_URL}/admins/login`;
 
 export const listFeedback = () => {
-	return axios.get(URL_Base);}
-	
+  return axios.get(URL_Base);
+};
+
 export const createFeedback = (feedback) => axios.post(URL_Base, feedback);
 
 export const getFeedbackById = (id) => axios.get(URL_Base + '/' + id);
